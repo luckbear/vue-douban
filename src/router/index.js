@@ -3,17 +3,47 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import pageView from '../views/PageView.vue'
+import PageView from '../components/views/PagesView.vue'
+import HomeView from '../components/views/HomeView.vue'
+import MovieView from '../components/views/MovieView.vue'
+import BookView from '../components/views/BookView.vue'
+import RadioView from '../components/views/RadioView.vue'
+import GroupView from '../components/views/GroupView.vue'
 
 export default new VueRouter({
-    routes: [
-        {
+    routes: [{
             path: '/',
-            redirect: '/page'
+            redirect: '/pages'
         },
         {
-            path: '/page',
-            component: pageView
-        }
+            path: '/pages',
+            component: PageView,
+            children: [{
+                    path: '',
+                    redirect: '/pages/home'
+                },
+                {
+                    path: 'home',
+                    component: HomeView
+                },
+                {
+                    path: 'Movie',
+                    component: MovieView
+                },
+                {
+                    path: 'Book',
+                    component: BookView
+                },
+                {
+                    path: 'Radio',
+                    component: RadioView
+                },
+                {
+                    path: 'Group',
+                    component: GroupView
+                }
+            ]
+        },
+
     ]
 })

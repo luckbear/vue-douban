@@ -1,14 +1,14 @@
 <template>
-    <div class="pageView">
-        <headerBar/>
+    <div class="home">
+        <div class="content">
+            home
+        </div>
     </div>
 </template>
 
 <script>
-import headerBar from '../components/common/header';
 export default {
   components: {
-    headerBar
   }
 };
 </script>
