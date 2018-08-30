@@ -42,7 +42,7 @@ export default {};
     font-size: 16px;
     li {
       margin-right: 2rem;
-      &:nth-child(1)a {
+      &:nth-child(1) a {
         color: #2384e8;
       }
       &:nth-child(2) a {

@@ -18,19 +18,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 14px;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 5rem 1.8rem 0;
 }
 html {
   font-size: 62.5%; //默认16px的62.5%=10px
-  body{
+  body {
     margin: 0;
     padding: 0;
   }
-}
-
-#app {
-  max-width: 42rem;
-  margin: 0 auto;
-  padding-top: 5rem;
 }
 
 h2 {
@@ -51,5 +48,4 @@ li {
 a {
   text-decoration: none;
 }
-
 </style>
