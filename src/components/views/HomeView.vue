@@ -2,16 +2,24 @@
     <div class="home">
         <div class="content">
             <SubNav/>
+            <list :events="events"/>
+            <InfiniteLoading :on-infinite="onInfinite" ref="infiniteLoding"/>
         </div>
     </div>
 </template>
 
 <script>
 import SubNav from "../common/SubNav";
-import { mapState} from "vuex";
+import List from "../common/List";
+import InfiniteLoading from "vue-infinite-loading";
+import { mapState, mapActions } from "vuex";
+
 export default {
   components: {
-    SubNav
+    SubNav,
+    InfiniteLoading,
+    List,
+    Map
   },
   props: {},
   data() {
@@ -21,11 +29,16 @@ export default {
     ...mapState({ events: state => state.activity.events })
   },
   watch: {},
-  created() {
-      this.$store.dispatch('loadMore')
-      
-  },
-  methods: {}
+  created() {},
+  methods: {
+    onInfinite() {
+      setTimeout(() => {
+        this.loadMore();
+        this.$refs.infiniteLoding.$emit('$InfiniteLoading:loaded');
+      }, 1000);
+    },
+    ...mapActions(["loadMore"])
+  }
 };
 </script>
 

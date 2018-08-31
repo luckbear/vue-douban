@@ -41,6 +41,7 @@ a,
 h2 {
   margin: 0;
   padding: 0;
+  color: #111;
 }
 li {
   list-style: none;

@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 import PageView from '../components/views/PagesView.vue'
 import HomeView from '../components/views/HomeView.vue'
+import DetailView from '../components/views/DetailView.vue'
 import MovieView from '../components/views/MovieView.vue'
 import BookView from '../components/views/BookView.vue'
 import RadioView from '../components/views/RadioView.vue'
@@ -25,6 +26,10 @@ export default new VueRouter({
                 {
                     path: 'home',
                     component: HomeView
+                },
+                {
+                    path: 'detail:id',
+                    component: DetailView
                 },
                 {
                     path: 'Movie',
