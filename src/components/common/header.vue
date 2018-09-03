@@ -4,10 +4,10 @@
             <router-link to="/pages">豆瓣</router-link>
         </h1>
         <ul class="nav">
-            <li><router-link to="">电影</router-link></li>
-            <li><router-link to="">图书</router-link></li>
-            <li><router-link to="">广播</router-link></li>
-            <li><router-link to="">小组</router-link></li>
+            <li><router-link to="movie">电影</router-link></li>
+            <li><router-link to="book">图书</router-link></li>
+            <li><router-link to="radio">广播</router-link></li>
+            <li><router-link to="group">小组</router-link></li>
         </ul>
         <span class="menu"></span>
     </div>
