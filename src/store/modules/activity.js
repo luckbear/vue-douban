@@ -42,13 +42,18 @@ const actions = {
     getEventDetail({
         commit
     }, id) {
-        request.get('https://api.douban.com/v2/event/' + id)
-            .use(jsonp)
-            .end((err, res) => {
-                if (res) {
-                    commit('getEventDetail', res.body)
-                }
-            })
+        return new Promise((resolve) => {
+            request.get('https://api.douban.com/v2/event/' + id)
+                .use(jsonp)
+                .end((err, res) => {
+                    if (res) {
+                        commit('getEventDetail', res.body)
+                        resolve(res)
+                    }
+
+                })
+        })
+
     }
 
 }

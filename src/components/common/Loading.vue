@@ -13,4 +13,7 @@ export default {
 
 
 <style lang="less" scoped>
+.loading{
+    text-align-last: center;
+}
 </style>

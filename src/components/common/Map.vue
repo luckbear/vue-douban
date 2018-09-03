@@ -10,7 +10,7 @@ export default {
   props: ["geo"],
   computed: {
     poi() {
-      return this.geo.split(" ");
+      return this.geo.split(" ").reverse();
     }
   },
   mounted() {

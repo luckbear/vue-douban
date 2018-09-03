@@ -32,19 +32,19 @@ export default new VueRouter({
                     component: DetailView
                 },
                 {
-                    path: 'Movie',
+                    path: 'movie',
                     component: MovieView
                 },
                 {
-                    path: 'Book',
+                    path: 'book',
                     component: BookView
                 },
                 {
-                    path: 'Radio',
+                    path: 'radio',
                     component: RadioView
                 },
                 {
-                    path: 'Group',
+                    path: 'group',
                     component: GroupView
                 }
             ]

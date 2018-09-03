@@ -7,7 +7,7 @@
                         <h3>{{event.title}}</h3>
                         <p v-html="event.content"> </p>
                     </div>
-                    <img :src="event.image_lmobile" alt="">
+                    <img :src="event.image" alt="">
                 </div>
 
                 <div class="tag">
