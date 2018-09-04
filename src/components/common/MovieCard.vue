@@ -37,6 +37,9 @@ export default {
 
 <style lang="less" scoped>
 .card {
+  section{
+    margin-bottom: 2rem;
+  }
   header {
     margin-top: 1rem;
     h2 {
@@ -52,6 +55,7 @@ export default {
     white-space: nowrap;
     text-align: center;
     overflow-x: auto;
+    &::-webkit-scrollbar { display: none };  //去除横向滚动条
     li {
       display: inline-block;
       width: 10rem;

@@ -58,15 +58,15 @@ const mutations = {
     switch (payload.tag) {
       case 'hotMovies':
         state.hotMovies.movie = payload.res
-        state.movies.unshift(state.hotMovies)
+        state.movies.push(state.hotMovies)
         break
       case 'newMovies':
         state.newMovies.movie = payload.res
-        state.movies.unshift(state.newMovies)
+        state.movies.push(state.newMovies)
         break
       case 'topMovies':
         state.topMovies.movie = payload.res
-        state.movies.unshift(state.topMovies)
+        state.movies.push(state.topMovies)
         break
       default:
         state.hotMovies.movie = payload.res
@@ -86,7 +86,7 @@ const actions = {
       .get('https://api.douban.com/v2/movie/in_theaters?count=8')
       .use(jsonp)
       .end((err, res) => {
-        if (!err) {
+        if (!err) {   
           commit({
             type: 'getMovie',
             tag: 'hotMovies',

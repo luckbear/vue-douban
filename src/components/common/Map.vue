@@ -10,9 +10,15 @@ export default {
   props: ["geo"],
   computed: {
     poi() {
-      return this.geo.split(" ").reverse();
+      return this.geo
+        .split(" ")
+        .reverse()
+        .map(item => {
+          return parseFloat(item);
+        });
     }
   },
+
   mounted() {
     this.initMap();
   },
@@ -21,12 +27,12 @@ export default {
       //创建地图
       let mapObj = new AMap.Map("mapContainer", {
         resizeEnable: true,
-        center: [this.poi],
+        center: this.poi,
         zoom: 13
       });
       //创建点
       let marker = new AMap.Marker({
-        position: [this.poi]
+        position: this.poi
       });
       //把点添加到地图
       mapObj.add(marker);
