@@ -6,9 +6,9 @@
                 <a href="#">更多</a>
             </header>
 
-            <ul>
+            <ul class="hasImg">
                 <li v-for="(movie,index) in item.movie" :key=index>
-                    <router-link to="" >
+                    <router-link to="">
                         <div class="poster"><img :src="movie.images.large"></div>
                         <span>{{movie.title}}</span>
                         <!-- 评分组件 -->
@@ -17,10 +17,21 @@
                 </li>
             </ul>
         </section>
+
+        <section>
+            <header>
+                <h2>{{onlyStr}}</h2>
+                <a href="#">更多</a>
+            </header>
+
+            <ul class="onlyStr">
+                <li v-for="(tag,i) in movieTags" :key="i" :style="{'border-color':tag.color}">
+                    <a :href="tag.href" :style="{color:tag.color}" v-if="!tag.line">{{tag.title}}</a>
+                </li>
+            </ul>
+        </section>
+
     </div>
-
-    
-
 
 </template>
 
@@ -30,14 +41,14 @@ export default {
   components: {
     Rating
   },
-  props:['movies']
+  props: ["movies", "movieTags","onlyStr"]
 };
 </script>
 
 
 <style lang="less" scoped>
 .card {
-  section{
+  section {
     margin-bottom: 2rem;
   }
   header {
@@ -50,12 +61,14 @@ export default {
       color: #42bd56;
     }
   }
-  ul {
+  .hasImg {
     margin-top: 1rem;
     white-space: nowrap;
     text-align: center;
     overflow-x: auto;
-    &::-webkit-scrollbar { display: none };  //去除横向滚动条
+    &::-webkit-scrollbar {
+      display: none;
+    } //去除横向滚动条
     li {
       display: inline-block;
       width: 10rem;
@@ -65,6 +78,7 @@ export default {
       }
       img {
         width: 100%;
+        height: 14rem;
       }
       span {
         display: block;
@@ -73,6 +87,28 @@ export default {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+      }
+    }
+  }
+  .onlyStr {
+    white-space: nowrap;
+    overflow-x: auto;
+    margin-top: 1rem;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      padding: 1.5rem;
+      border: 1px solid;
+      border-radius: 0.3rem;
+      margin-right: 1rem;
+      &:empty {
+        display: block;
+        width: 100%;
+        height: 1rem;
+        padding: 0;
+        border: 0;
       }
     }
   }

@@ -28,13 +28,13 @@
         <!-- 主页导航栏 -->
         <div class="topNav" v-if="isNav==='topNav'">
             <ul class="nav">
-                <li><router-link to="">影院热映</router-link></li>
+                <li><router-link to="movie">影院热映</router-link></li>
                 <li><router-link to="">欧美新碟榜</router-link></li>
                 <li><router-link to="">注册帐号</router-link></li>
                 <li>
-                    <template>
+                    <!-- <template>
                         <a href="#">退出登录</a>
-                    </template>
+                    </template> -->
                     <template>
                         <router-link to="/login">登陆豆瓣</router-link>
                     </template>
